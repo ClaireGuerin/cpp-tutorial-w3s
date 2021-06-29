@@ -104,5 +104,11 @@ int main() {
     cout << "Looking forward to the Weekend";
 }
 
+int i = 0;
+while (i < 5) {
+  cout << i << "\n";
+  i++;
+}
+
   return 0; 
 }
