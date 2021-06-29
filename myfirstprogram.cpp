@@ -117,5 +117,20 @@ do {
 }
 while (i < 5);
 
-  return 0; 
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+cout << cars[0];
+cars[0] = "Opel";
+for(int i = 0; i < 4; i++) {
+  cout << i << ": " << cars[i] << "\n";
+}
+
+string fruits[] = {"apple", "pear"}; /* if no size specified, the array will only be as big as the original size. 
+To add elements, you need to overwrite the whole array.*/
+
+string veggies[5] = {"carrot", "eggplant", "green peas"}; // pre-allocate space for five items in total
+veggies[3] = "khale";
+veggies[4] = "asparagus";
+cout << veggies << "\n";
+
+return 0; 
 }
