@@ -7,7 +7,7 @@ using namespace std;
 
 // FUNCTION DECLARATION
 void myFunction() {
-  cout << "I just got executed!";
+  cout << "I just got executed!\n";
 }
 
 void myOptimalFunction();
@@ -60,11 +60,11 @@ int main() {
   to the screen, and it is amazing */
 
 
-  cout << "Hello World!\n\n";
+  cout << "Hello World!\n";
   cout << "I am learning C++\n\n"; // it also says I'm learning cpp
-  cout << myNum << "\n\n"; // "<<" means "flush to the cout buffer"
-  cout << myBool << "\n\n";
-  cout << x + y + z << "\n\n";
+  cout << myNum << "\n"; // "<<" means "flush to the cout buffer"
+  cout << myBool << "\n";
+  cout << x + y + z << "\n";
 
   // USER INPUT
 
@@ -74,38 +74,37 @@ int main() {
   cout << "Type another number: ";
   cin >> inputNum2;
   const int sum = inputNum1 + inputNum2;
-  cout << "Sum is: " << sum;
+  cout << "Sum is: " << sum << "\n";
 
   // APPENDING STRINGS
 
   string firstName = "John ";
   string lastName = "Doe";
   string fullName = firstName.append(lastName); // or string fullName = firstName + lastName;
-  cout << fullName + "\n"; 
-  cout << "The name " + fullName + "contains " << fullName.length() << " letters\n"; // or fullName.size()
-  cout << fullName + "has initials " + firstName[0] + lastName[0];
+  cout << "The name " + fullName + " contains " << fullName.length() << " letters\n"; // or fullName.size()
+  cout << fullName + " has initials " + firstName[0] + lastName[0] << "\n";
 
-  string userName;
+  string name;
   cout << "Type your full name: ";
-  getline (cin, userName); // a regular cin >> userName would only return the first string before space, e.g. Claire instead of Claire Guerin
-  cout << "Your name is: " << userName;
+  getline (cin, name); // a regular cin >> userName would only return the first string before space, e.g. Claire instead of Claire Guerin
+  cout << "Your name is: " << name << "\n";
 
   // OPERATORS
 
-  cout << sqrt(64);
-  cout << round(2.6);
-  cout << log(2);
+  cout << "Square root of 64 is " << sqrt(64) << "\n";
+  cout << "Rounding 2.6 to " << round(2.6) << "\n";
+  cout << "Natural logarithm of 2 is " << log(2) << "\n";
 
   if (x < y) {
-    cout << "x is greater than y";
+    cout << "x is greater than y \n";
   } else if (x == y) {
     cout << "x is y";
   } else {
-    cout << "x is smaller than y";
+    cout << "x is smaller than y \n";
   }
 
   int time = 20;
-  string result = (time < 18) ? "Good day." : "Good evening."; // ternary operator = short hand for if... else statement
+  string result = (time < 18) ? "Good day.\n" : "Good evening.\n"; // ternary operator = short hand for if... else statement
   cout << result; 
 
   // SWITCH
@@ -113,22 +112,22 @@ int main() {
   int day = 4;
   switch (day) {
     case 1:
-      cout << "Monday";
+      cout << "Monday\n";
       break;
     case 2:
-      cout << "Tuesday";
+      cout << "Tuesday\n";
       break;
     case 3:
-      cout << "Wednesday";
+      cout << "Wednesday\n";
       break;
     case 4:
-      cout << "Thursday";
+      cout << "Thursday\n";
       break;
     case 5:
-      cout << "Friday";
+      cout << "Friday\n";
       break;
     case 6:
-      cout << "Saturday";
+      cout << "Saturday\n";
       break;
     case 7:
       cout << "Sunday";
@@ -137,13 +136,13 @@ int main() {
 
   switch (day) {
   case 6:
-    cout << "Today is Saturday";
+    cout << "Today is Saturday\n";
     break;
   case 7:
-    cout << "Today is Sunday";
+    cout << "Today is Sunday\n";
     break;
   default:
-    cout << "Looking forward to the Weekend";
+    cout << "Looking forward to the Weekend\n";
   }
 
   // WHILE LOOPS
@@ -153,18 +152,17 @@ int main() {
     cout << i << "\n";
     i++;
   }
-
-  int i = 0;
+  
   do {
     cout << i << "\n";
     i++;
   }
-  while (i < 5);
+  while (i < 10);
 
   // ARRAYS
 
   string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
-  cout << cars[0];
+  cout << cars[0] << "\n";
   cars[0] = "Opel";
   for(int i = 0; i < 4; i++) {
     cout << i << ": " << cars[i] << "\n";
@@ -176,7 +174,7 @@ int main() {
   string veggies[5] = {"carrot", "eggplant", "green peas"}; // pre-allocate space for five items in total
   veggies[3] = "khale";
   veggies[4] = "asparagus";
-  cout << veggies << "\n";
+  cout << veggies[3] << "\n";
 
   // REFERENCES & POINTERS
   /* References and Pointers are important in C++, because they give the ability to manipulate the data in the computer's memory 
@@ -208,30 +206,29 @@ int main() {
   myNamingFunction("Gyda");
   myNamingFunction("Amaranta", "Spain");
   int calc = myMathFunction(3);
-  cout << calc;
+  cout << calc << "\n";
 
   // Function: pass by reference
 
   int firstNum = 10;
   int secondNum = 20;
 
-  cout << "Before swap: " << "\n";
-  cout << firstNum << secondNum << "\n"; // outputs 10 20
+  cout << "Before swap: " << firstNum << secondNum << "\n"; // outputs 10 20
 
   // Call the function, which will change the values of firstNum and secondNum
   swapNums(firstNum, secondNum);
 
-  cout << "After swap: " << "\n";
-  cout << firstNum << secondNum << "\n"; // outputs 20 10
+  cout << "After swap: " << firstNum << secondNum << "\n"; // outputs 20 10
 
   int myNum1 = plusFunc(8, 5);
   double myNum2 = plusFunc(4.3, 6.26);
   cout << "Int: " << myNum1 << "\n";
-  cout << "Double: " << myNum2;
+  cout << "Double: " << myNum2 << "\n";
 
   return 0; 
-  }
+}
 
 // Function definition
 void myOptimalFunction() {
-  cout << "I just got executed!";
+  cout << "I just got executed\n";
+}
