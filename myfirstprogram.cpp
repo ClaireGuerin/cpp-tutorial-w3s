@@ -10,6 +10,9 @@ to the screen, and it is amazing */
 
 
 int main() {
+
+  // DECLARING VARIABLES AND TYPES
+
   const int myNum = 15; // define variable with type int. Make it constant: it can never change
   double myBool; // declare variable without assigned value
   float f1 = 35e3;
@@ -32,6 +35,8 @@ int main() {
   cout << myBool << "\n\n";
   cout << x + y + z << "\n\n";
 
+  // USER INPUT
+
   int inputNum1, inputNum2; 
   cout << "Type a number: "; // Type a number and press enter
   cin >> inputNum1; // Get user input from the keyboard
@@ -39,6 +44,8 @@ int main() {
   cin >> inputNum2;
   const int sum = inputNum1 + inputNum2;
   cout << "Sum is: " << sum;
+
+  // APPENDING STRINGS
 
   string firstName = "John ";
   string lastName = "Doe";
@@ -51,6 +58,8 @@ int main() {
   cout << "Type your full name: ";
   getline (cin, userName); // a regular cin >> userName would only return the first string before space, e.g. Claire instead of Claire Guerin
   cout << "Your name is: " << userName;
+
+  // OPERATORS
 
   cout << sqrt(64);
   cout << round(2.6);
@@ -67,6 +76,8 @@ int main() {
   int time = 20;
   string result = (time < 18) ? "Good day." : "Good evening."; // ternary operator = short hand for if... else statement
   cout << result; 
+
+  // SWITCH
 
   int day = 4;
   switch (day) {
@@ -104,6 +115,8 @@ int main() {
     cout << "Looking forward to the Weekend";
 }
 
+// WHILE LOOPS
+
 int i = 0;
 while (i < 5) {
   cout << i << "\n";
@@ -116,6 +129,8 @@ do {
   i++;
 }
 while (i < 5);
+
+// ARRAYS
 
 string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
 cout << cars[0];
@@ -131,6 +146,17 @@ string veggies[5] = {"carrot", "eggplant", "green peas"}; // pre-allocate space 
 veggies[3] = "khale";
 veggies[4] = "asparagus";
 cout << veggies << "\n";
+
+// REFERENCES & POINTERS
+/* References and Pointers are important in C++, because they give the ability to manipulate the data in the computer's memory 
+-- which can reduce the code and improve the performance. */
+
+string food = "Pizza";
+string &meal = food; // meal refers to food
+
+cout << food << "\n";  // Outputs Pizza
+cout << meal << "\n";  // Outputs Pizza
+cout << &food; // Outputs memory address of variable food in hexadecimal form (0x..)
 
 return 0; 
 }
