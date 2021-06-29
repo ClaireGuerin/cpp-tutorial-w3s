@@ -5,9 +5,47 @@
 #include <cmath>
 using namespace std;
 
-/* The code below will print the words Hello World!
-to the screen, and it is amazing */
 
+// C++ is Object Oriented Programming
+
+/* Object-oriented programming has several advantages over procedural programming:
+
+  - OOP is faster and easier to execute
+  - OOP provides a clear structure for the programs
+  - OOP helps to keep the C++ code DRY "Don't Repeat Yourself", and makes the code easier to maintain, modify and debug
+  - OOP makes it possible to create full reusable applications with less code and shorter development time */
+
+// FUNCTION DECLARATION
+void myFunction() {
+  cout << "I just got executed!";
+}
+
+void myOptimalFunction();
+
+void myNamingFunction(string fname, string country = "Norway") {
+  cout << fname << " comes from " << country << "\n";
+}
+
+int myMathFunction(int x) {
+  return (5 + x) / 2;
+}
+
+void swapNums(int &x, int &y) {
+  int z = x;
+  x = y;
+  y = z;
+}
+
+/* function overload: plusFunc returns int for int numbers and double for doubles.
+Multiple functions can have the same name as long as the number and/or type of parameters are different.*/
+
+int plusFunc(int x, int y) {
+  return x + y;
+}
+
+double plusFunc(double x, double y) {
+  return x + y;
+}
 
 int main() {
 
@@ -28,6 +66,9 @@ int main() {
   
 
   // static_cast<double>(myNum) // this forces a type change from a int variable to double. It is usually considered bad practice.
+  /* The code below will print the words Hello World!
+  to the screen, and it is amazing */
+
 
   cout << "Hello World!\n\n";
   cout << "I am learning C++\n\n"; // it also says I'm learning cpp
@@ -113,62 +154,94 @@ int main() {
     break;
   default:
     cout << "Looking forward to the Weekend";
-}
+  }
 
-// WHILE LOOPS
+  // WHILE LOOPS
 
-int i = 0;
-while (i < 5) {
-  cout << i << "\n";
-  i++;
-}
+  int i = 0;
+  while (i < 5) {
+    cout << i << "\n";
+    i++;
+  }
 
-int i = 0;
-do {
-  cout << i << "\n";
-  i++;
-}
-while (i < 5);
+  int i = 0;
+  do {
+    cout << i << "\n";
+    i++;
+  }
+  while (i < 5);
 
-// ARRAYS
+  // ARRAYS
 
-string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
-cout << cars[0];
-cars[0] = "Opel";
-for(int i = 0; i < 4; i++) {
-  cout << i << ": " << cars[i] << "\n";
-}
+  string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+  cout << cars[0];
+  cars[0] = "Opel";
+  for(int i = 0; i < 4; i++) {
+    cout << i << ": " << cars[i] << "\n";
+  }
 
-string fruits[] = {"apple", "pear"}; /* if no size specified, the array will only be as big as the original size. 
-To add elements, you need to overwrite the whole array.*/
+  string fruits[] = {"apple", "pear"}; /* if no size specified, the array will only be as big as the original size. 
+  To add elements, you need to overwrite the whole array.*/
 
-string veggies[5] = {"carrot", "eggplant", "green peas"}; // pre-allocate space for five items in total
-veggies[3] = "khale";
-veggies[4] = "asparagus";
-cout << veggies << "\n";
+  string veggies[5] = {"carrot", "eggplant", "green peas"}; // pre-allocate space for five items in total
+  veggies[3] = "khale";
+  veggies[4] = "asparagus";
+  cout << veggies << "\n";
 
-// REFERENCES & POINTERS
-/* References and Pointers are important in C++, because they give the ability to manipulate the data in the computer's memory 
--- which can reduce the code and improve the performance. */
+  // REFERENCES & POINTERS
+  /* References and Pointers are important in C++, because they give the ability to manipulate the data in the computer's memory 
+  -- which can reduce the code and improve the performance. */
 
-string food = "Pizza";
-string &meal = food; // meal refers to food
+  string food = "Pizza";
+  string &meal = food; // meal refers to food
 
-cout << food << "\n";  // Outputs Pizza
-cout << meal << "\n";  // Outputs Pizza
-cout << &food; // Outputs memory address of variable food in hexadecimal form (0x..)
+  cout << food << "\n";  // Outputs Pizza
+  cout << meal << "\n";  // Outputs Pizza
+  cout << &food; // Outputs memory address of variable food in hexadecimal form (0x..)
 
-string* p_food = &food; /* A pointer variable, with the name p_food, that stores the address of food, 
-and which matches the type of the corresponding variable. */
+  string* p_food = &food; /* A pointer variable, with the name p_food, that stores the address of food, 
+  and which matches the type of the corresponding variable. */
 
-// Reference: Output the memory address of food with the pointer (0x..)
-cout << p_food << "\n";
-// Dereference: Output the value of food with the pointer (Pizza)
-cout << *p_food << "\n";
+  // Reference: Output the memory address of food with the pointer (0x..)
+  cout << p_food << "\n";
+  // Dereference: Output the value of food with the pointer (Pizza)
+  cout << *p_food << "\n";
 
-*p_food = "Hamburger"; // Change the value of the pointer
-cout << *p_food << "\n"; // Output the new value of the pointer (Hamburger)
-cout << food << "\n"; // Output the new value of the food variable (Hamburger)
+  *p_food = "Hamburger"; // Change the value of the pointer
+  cout << *p_food << "\n"; // Output the new value of the pointer (Hamburger)
+  cout << food << "\n"; // Output the new value of the food variable (Hamburger)
 
-return 0; 
-}
+  // FUNCTIONS
+
+  myFunction(); // calls the global function. Outputs "I just got executed!"
+  myOptimalFunction();  // call the declared yet undefined function - it will be defined after main()
+  myNamingFunction("Gyda");
+  myNamingFunction("Amaranta", "Spain");
+  int calc = myMathFunction(3);
+  cout << calc;
+
+  // Function: pass by reference
+
+  int firstNum = 10;
+  int secondNum = 20;
+
+  cout << "Before swap: " << "\n";
+  cout << firstNum << secondNum << "\n"; // outputs 10 20
+
+  // Call the function, which will change the values of firstNum and secondNum
+  swapNums(firstNum, secondNum);
+
+  cout << "After swap: " << "\n";
+  cout << firstNum << secondNum << "\n"; // outputs 20 10
+
+  int myNum1 = plusFunc(8, 5);
+  double myNum2 = plusFunc(4.3, 6.26);
+  cout << "Int: " << myNum1 << "\n";
+  cout << "Double: " << myNum2;
+
+  return 0; 
+  }
+
+// Function definition
+void myOptimalFunction() {
+  cout << "I just got executed!";
