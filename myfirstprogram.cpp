@@ -158,5 +158,17 @@ cout << food << "\n";  // Outputs Pizza
 cout << meal << "\n";  // Outputs Pizza
 cout << &food; // Outputs memory address of variable food in hexadecimal form (0x..)
 
+string* p_food = &food; /* A pointer variable, with the name p_food, that stores the address of food, 
+and which matches the type of the corresponding variable. */
+
+// Reference: Output the memory address of food with the pointer (0x..)
+cout << p_food << "\n";
+// Dereference: Output the value of food with the pointer (Pizza)
+cout << *p_food << "\n";
+
+*p_food = "Hamburger"; // Change the value of the pointer
+cout << *p_food << "\n"; // Output the new value of the pointer (Hamburger)
+cout << food << "\n"; // Output the new value of the food variable (Hamburger)
+
 return 0; 
 }
